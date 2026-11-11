@@ -1,0 +1,5 @@
+.imagem img{
+     width: 500px; height: 350px; border: 2px rgba(255,255,255,.8);
+      border-radius: 16px; display: grid; place-items: center;
+      color: white; font-size: 12px; text-align: center; flex: 0 0 auto;
+}
