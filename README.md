@@ -15,3 +15,262 @@
       --white: #fff;
       --line: #e1eae1;
     }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, #143d2a, #28734a);
+      color: white;
+      padding: 22px max(5vw, 20px) 0;
+    }
+    .top {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .brand { display: flex; align-items: center; gap: 14px; }
+    
+    .avatar img {
+      width: 100%; height: 70%; border-radius: 50%; margin: 0 auto 12px;
+      background: #eaf7e5; border: 1px dashed #9fbea4; display: grid; place-items: center;
+      color: var(--green-dark); font-size: .8rem;
+    }
+    
+    .logo img {
+      width: 140px; height: 70px; border: 2px rgba(255,255,255,.8);
+      border-radius: 16px; display: grid; place-items: center;
+      color: white; font-size: 12px; text-align: center; flex: 0 0 auto;
+    }
+    
+    
+    
+    
+    .brand h1 { margin: 0; font-size: 1.65rem; letter-spacing: .04em; }
+    .brand p { margin: 2px 0 0; color: #d9f1df; font-size: .9rem; }
+    nav {
+      max-width: 1100px; margin: 24px auto 0; display: flex;
+      gap: 8px; overflow-x: auto;
+    }
+    nav button {
+      border: 0; background: transparent; color: #e8f5eb; cursor: pointer;
+      padding: 13px 17px; font-size: .95rem; font-weight: 700;
+      border-bottom: 3px solid transparent; white-space: nowrap;
+    }
+    nav button:hover, nav button.active {
+      color: white; border-bottom-color: var(--green);
+    }
+    main { max-width: 1100px; margin: 42px auto; padding: 0 20px 50px; }
+    .tab { display: none; animation: appear .25s ease; }
+    .tab.active { display: block; }
+    @keyframes appear { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: none; } }
+    .eyebrow { color: var(--green-dark); font-weight: 700; text-transform: uppercase; letter-spacing: .12em; font-size: .78rem; }
+    h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.15; margin: 8px 0 14px; }
+    h3 { margin-top: 0; }
+    .intro { color: var(--muted); max-width: 720px; font-size: 1.08rem; }
+    .hero {
+      background: var(--white); border: 1px solid var(--line); border-radius: 24px;
+      padding: clamp(24px, 5vw, 52px); display: grid;
+      grid-template-columns: 1.35fr .65fr; gap: 30px; align-items: center;
+      box-shadow: 0 12px 35px rgba(28,75,47,.06);
+    }
+    .hero-art {
+      min-height: 230px; border-radius: 20px; display: grid; place-items: center;
+      text-align: center; padding: 20px; color: #17452e;
+      background: radial-gradient(circle at 50% 45%, #e9ffd2, #b8ed8b 55%, #75c86d);
+      font-weight: 700;
+    }
+    .placeholder {
+      color: #77867c; border: 1.5px dashed #b8c9ba; border-radius: 12px;
+      padding: 18px; background: #fbfdfb; font-size: .95rem;
+    }
+    .section-heading { margin: 42px 0 18px; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .card {
+      background: white; border: 1px solid var(--line); border-radius: 16px;
+      padding: 22px; min-height: 150px;
+    }
+    .card p { color: var(--muted); margin-bottom: 0; }
+    .icon {
+      width: 42px; height: 42px; border-radius: 12px; background: #eaf7e5;
+      display: grid; place-items: center; font-size: 1.25rem; margin-bottom: 14px;
+    }
+    .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 20px; }
+    .member { text-align: center; }
+    .avatar img{
+      width: 100px; height: 160px; border-radius: 50%; margin: 1 auto 12px;
+      background: #297c08; border: 3px #155b21; display: grid; place-items: center;
+      color: var(--green-dark); font-size: .8rem;
+    }
+    .faq { border-bottom: 1px solid var(--line); padding: 18px 0; }
+    .faq h3 { font-size: 1.05rem; margin-bottom: 6px; }
+    .faq p { margin: 0; color: var(--muted); }
+    footer {
+      background: #143d2a; color: #d9e9dd; text-align: center;
+      padding: 24px 20px; font-size: .9rem;
+    }
+    @media (max-width: 760px) {
+      .hero { grid-template-columns: 1fr; }
+      .grid, .team-grid { grid-template-columns: 1fr; }
+      main { margin-top: 28px; }
+      nav { margin-top: 18px; }
+    }
+   
+  </style>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="top">
+      <div class="brand">
+      <div class="logo">
+    <img src="imagens/mangrove michio.jpeg" alt="mangrove">
+</div>
+        <div>
+          <h1>MANGROVE</h1>
+          <p>Conhecer para preservar!</p>
+        </div>
+</a>
+      </div>
+    </div>
+    <nav aria-label="Navegação principal">
+      <button class="active" data-tab="inicio">Início</button>
+      <button data-tab="arquivos">Arquivos do jogo</button>
+      <button data-tab="equipe">Nossa equipe</button>
+      <button data-tab="faq">FAQ</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="tab active">
+      <div class="hero">
+        <div>
+          <span class="eyebrow">FIRST LEGO League</span>
+          <h2>Mangrove</h2>
+          <p class="intro">O projeto Mangrove se trata de um jogo de 2-6 jogadores no qual os participantes aprendem de forma divertida sobre a importância da preservação dos ecossistemas de mangue.</p>
+          <div class="placeholder"><strong>Quem criou?</strong><br>A equipe Legotrix criou esse projeto para auxiliar na conscientização das pessoas sobre a importância da preservação dos ecossistemas de mangue.</div>
+        </div>
+        <div class="imagem">
+          <img src="imagens/tabuleiro.png" alt="Mangrove">
+        </div>
+      </div>
+
+      <div class="section-heading">
+        <span class="eyebrow">Conheça a iniciativa</span>
+        <h2>Uma ideia que pode fazer a diferença</h2>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="icon">💡</div>
+          <h3>Por que criamos?</h3>
+          <p>[Conte aqui o problema ou a motivação que levou à criação do BioGlow.]</p>
+        </article>
+        <article class="card">
+          <div class="icon">🌱</div>
+          <h3>O que queremos mudar?</h3>
+          <p>[Explique como o projeto pode contribuir para a vida das pessoas.]</p>
+        </article>
+        <article class="card">
+          <div class="icon">🔬</div>
+          <h3>Como funciona?</h3>
+          <p>[Inclua uma explicação simples sobre a solução desenvolvida.]</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="arquivos" class="tab">
+      <span class="eyebrow">Materiais para consulta</span>
+      <h2>Arquivos do jogo</h2>
+      <p class="intro">Reúna nesta área os documentos e materiais de apoio do BioGlow. Substitua os espaços abaixo pelos arquivos finais.</p>
+      <div class="grid">
+        <article class="card">
+          <div class="icon">📖</div>
+          <h3>Glossário</h3>
+          <p>Termos importantes e seus significados.</p>
+          <p class="placeholder">  <a href="arquivos/GlossárioPDF.pdf"
+   target="_blank"
+   class="botao-pdf">
+   📄 Visualizar documento
+</a></p>
+        </article>
+        <article class="card">
+          <div class="icon">📋</div>
+          <h3>Regras</h3>
+          <p>Regras, orientações e informações do jogo.</p>
+          <p class="placeholder">   <a href="arquivos/REGRAS DO JOGO.pdf"
+   target="_blank"
+   class="botao-pdf">
+   📄 Visualizar documento
+   </a></p>
+        </article>
+        <article class="card">
+          <div class="icon">🖨️</div>
+          <h3>Materiais para impressão</h3>
+          <p>Arquivos preparados para baixar e imprimir.</p>
+          <p class="placeholder">[Adicionar links dos arquivos]</p>
+        </article>
+      </div>
+      <p class="placeholder" style="margin-top:18px">Dica: quando tiver os PDFs, troque cada indicação por um link para o arquivo correspondente.</p>
+    </section>
+
+    <section id="equipe" class="tab">
+      <span class="eyebrow">Quem faz acontecer</span>
+      <h2>Equipe Legotrix</h2>
+      <p class="intro">Nós somos a equipe Legotrix, do SESI de Jardim da Penha, e participamos da FLL (FIRST LEGO League), um torneio mundial que, a cada temporada, apresenta um novo tema e desafia as equipes a encontrar soluções inovadoras para problemas reais.</p>
+      <div class="section-heading">
+        <h2>Conheça os integrantes</h2>
+    
+      </div>
+      <div class="team-grid">
+        <article class="card member"><div class="avatar"> <img src="imagens/julia.jpeg" alt="Integrante 1"></div><h3>Júlia</h3><p>Gestora</p></article>
+        <article class="card member"><div class="avatar"> <img src="imagens/lucas.jpeg" alt="Integrante 2"></div><h3>Lucas</h3><p>Construtor</p></article>
+        <article class="card member"><div class="avatar"> <img src="imagens/dante.jpeg" alt="Integrante 3"></div><h3>Dante</h3><p>Programador</p></article>
+    <article class="card member"><div class="avatar"> <img src="imagens/natalia.jpeg" alt="Integrante 4"></div><h3>Natália</h3><p>Gerente de Projeto</p></article>
+    <article class="card member"><div class="avatar"> <img src="imagens/ester.jpeg" alt="Integrante 5"></div><h3>Ester</h3><p>Pesquisadora</p></article>
+    <article class="card member"><div class="avatar"> <img src="imagens/nicole.jpeg" alt="Integrante 6"></div><h3>Nicole</h3><p>Pesquisadora</p></article>
+      
+    </section>
+
+    <section id="faq" class="tab">
+      <span class="eyebrow">Dúvidas frequentes</span>
+      <h2>FAQ</h2>
+      <p class="intro">Respostas rápidas para as perguntas mais comuns sobre o BioGlow.</p>
+      <div class="faq"><h3>[Pergunta frequente 1]</h3><p>[Escreva aqui a resposta.]</p></div>
+      <div class="faq"><h3>[Pergunta frequente 2]</h3><p>[Escreva aqui a resposta.]</p></div>
+      <div class="faq"><h3>[Pergunta frequente 3]</h3><p>[Escreva aqui a resposta.]</p></div>
+      <div class="faq"><h3>[Pergunta frequente 4]</h3><p>[Escreva aqui a resposta.]</p></div>
+      <p class="placeholder" style="margin-top:20px">Inclua novas perguntas duplicando um dos blocos acima.</p>
+    </section>
+  </main>
+
+  <footer>
+    <strong>Mangrove | Legotrix</strong><br>
+    Projeto desenvolvido para a FIRST LEGO League.
+    <div style="margin-top:6px">2026 / Sesi Jardim da Penha</div>
+  </footer>
+
+  <script>
+    const buttons = document.querySelectorAll('nav button');
+    const sections = document.querySelectorAll('.tab');
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        buttons.forEach(item => item.classList.remove('active'));
+        sections.forEach(section => section.classList.remove('active'));
+        button.classList.add('active');
+        document.getElementById(button.dataset.tab).classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>
